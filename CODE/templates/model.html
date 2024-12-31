@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Heart Disease Prediction Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .float {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-danger navbar-dark p-3">
+        <a class="navbar-brand fs-1" href="#">Prediction of Heart Disease Using Machine Learning Algorithms </a>
+        <ul class="navbar-nav float d-flex">
+            <li class="nav-item dropdown offset-md-11 col-3">
+                <a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
+                    Dashboard
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item " href="/graph">Performance Graph</a>
+                    <a class="dropdown-item " href="/all_users">Registered Users</a>
+                </div>
+            </li>
+            <li class="nav-item col-2">
+                <a class="nav-link" href="/load">Data Access</a>
+            </li>
+            <li class="nav-item col-2">
+                <a class="nav-link" href="/model">Data Conditioning</a>
+                <a class="nav-link" href="/contact">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <center>
+        <form action="/model" method="post">
+            <label for="algo" style="color:rgb(13, 164, 33);padding-top: 300px;">
+                <h3 style="background-color: rgb(255, 249, 249);">Select a Model:</h3>
+            </label>
+            <select id="algo" name="algo">
+                <option value="10">SELECT A ALGORITHM</option>
+
+                <option value="1">RandomForestClassifier</option>
+                <option value="2">XGBClassifier</option>
+                <option value="3">GradientBoostingClassifier</option>
+                <option value="4">Hybrid Model</option>
+                <option value="4">logistic regression</option>
+
+
+
+
+            </select>
+            <br><br><br>
+            <input type="submit" style="color: brown;font-size: 20px;background-color: rgb(255, 255, 255);">
+            <br><br><br>
+
+            <center><b style="color: rgb(255, 255, 255);font-size: 50px;background-color: rgb(0, 0, 0);">{{msg}}</b>
+            </center><br><br>
+    </center>
+
+    </form>
+    </center>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

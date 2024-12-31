@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Heart Disease Prediction Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .float {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-danger navbar-dark p-3">
+        <a class="navbar-brand fs-1" href="#">Prediction of Heart Disease Using Machine Learning Algorithms </a>
+        <ul class="navbar-nav float d-flex offset-md-5  col-4">
+            <a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
+                Dashboard
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item " href="/profile">Profile</a>
+                <a class="dropdown-item " href="/history">History</a>
+
+            </div>
+            </li>
+            <li class="nav-item col-2">
+                <a class="nav-link" href="/pradiction">Model Testing</a>
+                <a class="nav-link" href="/contact">Logout</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <center>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td,
+            th {
+                border: 1px solid #000000;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #ffffff;
+            }
+        </style>
+
+        <section id="contact" style="margin-right: 700px;">
+            <div class="container">
+                <div class="card">
+                    <center>
+                        <h3 style="color: rgb(255, 255, 255);">OUtput History </h3>
+                        <table style="width: 100%;">
+                            <tr>
+                                <th style="text-align: center">Age</th>
+                                <th style="text-align: center">Sex</th>
+                                <th style="text-align: center">Cp</th>
+                                <th style="text-align: center">Trestbps</th>
+                                <th style="text-align: center">Chol</th>
+                                <th style="text-align: center">Fbs</th>
+                                <th style="text-align: center">Restecg</th>
+                                <th style="text-align: center">Thalach</th>
+                                <th style="text-align: center">Exang</th>
+
+                                <th style="text-align: center">Oldpeak</th>
+                                <th style="text-align: center">Slope</th>
+                                <th style="text-align: center">Ca</th>
+                                <th style="text-align: center">thal</th>
+
+
+                                <th style="text-align: center">Predicted Output</th>
+                                <th style="text-align: center">user Email</th>
+                            </tr>
+                            {% for i in rows %}
+                            <tr>
+                                {% for j in i %}
+                                <td style="text-align: center">{{j}}</td>
+
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </center>
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

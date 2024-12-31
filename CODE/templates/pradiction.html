@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Heart Disease Prediction Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .float {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-danger navbar-dark p-3">
+        <a class="navbar-brand fs-1" href="#">Prediction of Heart Disease Using Machine Learning Algorithms </a>
+        <ul class="navbar-nav float d-flex offset-md-5  col-4">
+            <a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
+                Dashboard
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item " href="/profile">Profile</a>
+                <a class="dropdown-item " href="/history">History</a>
+
+            </div>
+            </li>
+            <li class="nav-item col-2">
+                <a class="nav-link" href="/pradiction">Model Testing</a>
+                <a class="nav-link" href="/contact">Logout</a>
+            </li>
+
+        </ul>
+    </nav>
+    <center>
+        <form action=/pradiction method="post" enctype="multipart/form-data" style="padding-top: 110px;">
+            <h1>PREDICTION</h1><br><br>
+            <div class="row">
+
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <label><b>Enter Age</b></label>
+                    <input type="number" class="form-control" name="age" min="10" max="99">
+
+                </div>
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <!-- <input type="number" class="form-control" id="sex" name="sex"> -->
+                    <label><b>Enter Gender</b></label>
+                    <select name="sex" style="width: 850px;">
+                        <option value="5">Select Gender</option>
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+
+
+                </div>
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <label><b>Enter Chest Pain(0 to 3) </b></label>
+                    <input type="number" class="form-control" id="cp" name="cp">
+
+                </div>
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <label><b>Resting blood pressure</b></label>
+                    <input type="number" class="form-control" id="trestbps" name="trestbps">
+
+
+                </div>
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <label><b>Cholesterol</b></label>
+                    <input type="number" class="form-control" id="chol" name="chol">
+
+
+                </div>
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <label><b>Fasting Blood Sugar</b></label>
+                    <input type="number" class="form-control" id="fbs" name="fbs">
+
+
+                </div>
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <label><b>Resting electrocardiographic results</b></label>
+                    <input type="number" class="form-control" id="restecg" name="restecg">
+
+
+                </div>
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <label><b>Maximum heart rate achieved</b></label>
+                    <input type="number" class="form-control" id="thalach" name="thalach">
+
+
+                </div>
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <label><b>Exercise induced angina</b></label>
+                    <input type="number" class="form-control" id="exang" name="exang">
+
+
+                </div>
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <label><b>Enter oldpeak</b></label>
+                    <input type="number" class="form-control" id="oldpeak" name="oldpeak">
+
+
+                </div>
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <label><b>Enter Slope</b></label>
+                    <input type="number" class="form-control" id="slope" name="slope">
+
+
+                </div>
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <label><b>Enter coronary calcium scan</b></label>
+                    <input type="number" class="form-control" id="ca" name="ca">
+
+
+                </div>
+                <div class="col-md-6 form-group" style="text-align: center">
+                    <label><b>Enter Thalassemia</b></label>
+                    <input type="number" class="form-control" id="thal" name="thal">
+
+                </div>
+                <div class="col-md-12 form-group">
+                    <button class="btn btn-primary submit form-control" onclick="send_data()">Predict Disease</button>
+                    <!--                              <input type="submit" class="btn btn-primary form-control"> -->
+                </div>
+
+
+                <h1 style="padding-left: 550px;">{{msg}}</h1>
+
+            </div>
+        </form>
+    </center><br><br><br><br><br><br>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
